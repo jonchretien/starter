@@ -1,0 +1,38 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Rows and grid-units
+// -------------------------
+
+.grid-unit {
+  @media screen and (min-width: $bp-lrg) {
+    float: left;
+    margin-right: percentage(20px / 940px);
+  }
+}
+
+.col-2 .grid-unit {
+  @media screen and (min-width: $bp-lrg) {
+    width: percentage(460px / 940px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.col-3 .grid-unit {
+  @media screen and (min-width: $bp-lrg) {
+    width: percentage(300px / 940px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.grid-row {
+  @extend %clearfix;
+}

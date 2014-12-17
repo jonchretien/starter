@@ -1,0 +1,64 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Box Sizing
+// -------------------------
+
+* {
+  @include box-sizing(border-box);
+}
+
+
+// User Selection
+// -------------------------
+
+@include selection($color-white, #a8d1ff);
+
+
+// Font Smoothing
+// -------------------------
+
+html {
+  @include font-smoothing();
+  -webkit-text-size-adjust: 100%;
+}
+
+
+// Body reset
+// -------------------------
+
+body {
+  background-color: $body-background;
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: 120%;
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: 100%;
+  }
+}
+
+
+// Links
+// -------------------------
+
+a {
+  color: $link-color;
+  @include transition(color .2s ease);
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+
+// Images
+// -------------------------
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}

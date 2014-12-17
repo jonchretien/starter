@@ -1,0 +1,53 @@
+//
+// Variables
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+
+$color-black:                 #000;
+$color-gray-darker:           #0a0a0a;
+$color-gray-dark:             #333;
+$color-gray:                  #666;
+$color-gray-light:            #999;
+$color-gray-lighter:          #e2e2e2;
+$color-white:                 #fff;
+
+// Custom Project Colors
+// -------------------------
+
+
+// Links
+// -------------------------
+
+$link-color:            $color-gray-dark;
+$link-color-hover:      lighten($link-color, 15%);
+
+// Scaffolding
+// -------------------------
+
+$body-background:       $color-white;
+$border-color:          $color-black;
+$text-color:            $color-gray-darker;
+
+// Typography
+// -------------------------
+
+$line-height-base:      1;
+
+// Font families
+$sans-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-font-family:     Georgia, "Times New Roman", Times, serif;
+$base-font-size:        16;
+$base-font-family:      $sans-font-family;
+
+// Media Queries
+// -------------------------
+$bp-xl:                 50em;
+$bp-lrg:                43.75em;
+$bp-med:                25em;
+$bp-sm:                 20em;
+
+// Shell width
+// ---------------------------
+$shell-width:           960px;

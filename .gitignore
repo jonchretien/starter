@@ -1,0 +1,24 @@
+# OS generated files #
+######################
+
+.DS_Store
+Icon
+Thumbs.db
+*.ico
+
+# Folders #
+######################
+
+_dist/
+_PSD/
+css/
+data/
+node_modules/
+
+# Misc. #
+######################
+
+js/app.js
+favicon.png
+.htaccess
+*.sass-cache

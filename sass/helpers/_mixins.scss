@@ -1,0 +1,145 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Font smoothing - http://maxvoltar.com/archive/-webkit-font-smoothing
+// ------------------
+
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+}
+
+
+// Webkit-style focus
+// ------------------
+@mixin tabFocus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+// Sizing shortcuts
+// -------------------------
+@mixin size($height, $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Transitions
+@mixin transition($value) {
+  -webkit-transition: $value;
+     -moz-transition: $value;
+      -ms-transition: $value;
+       -o-transition: $value;
+          transition: $value;
+}
+
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+     -moz-transition-delay: $transition-delay;
+       -o-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+
+// Background sizing
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+// Transforms
+@mixin transform($value) {
+  -webkit-transform: translateZ($value);
+     -moz-transform: translateZ($value);
+      -ms-transform: translateZ($value);
+       -o-transform: translateZ($value);
+          transform: translateZ($value);
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// Box shadows
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+          box-shadow: $value;
+}
+
+// User selection
+$prefixes: ("-moz-", "");
+@mixin selection($color, $background) {
+  @each $prefix in $prefixes {
+    ::#{$prefix}selection {
+      background: $background;
+      color: $color;
+      text-shadow: none;
+    }
+  }
+}
+
+
+// Borders
+// -------------------------
+
+%bordered {
+  border-top: 1px solid $border-color;
+}
+
+// Font Face
+// -------------------------
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight: normal, $font-style : normal, $font-stretch: normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../fonts/#{$font-filename}.eot');
+    src: url('../fonts/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$font-filename}.woff') format('woff'),
+    url('../fonts/#{$font-filename}.ttf') format('truetype'),
+    url('../fonts/#{$font-filename}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
