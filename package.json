@@ -26,6 +26,8 @@
     "browserify-shim": "~3.7.0",
     "browserify": "~5.11.2",
     "vinyl-source-stream": "~1.0.0",
-    "watchify": "~1.0.2"
+    "watchify": "~1.0.2",
+    "gulp-autoprefixer": "~2.1.0",
+    "postcss": "~4.0.1"
   }
 }

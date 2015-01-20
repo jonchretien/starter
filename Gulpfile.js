@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+var autoprefixer = require('gulp-autoprefixer');
 var browserify = require('browserify');
 var clean = require('gulp-clean');
 var connect = require('gulp-connect');
@@ -15,7 +16,6 @@ var sass = require('gulp-ruby-sass');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var watchify = require('watchify');
-
 
 /**
  * Assign variables.
@@ -40,8 +40,12 @@ paths.staticPaths = [
  */
 gulp.task('compile-sass', function() {
   return gulp.src('sass/app.scss')
-    .pipe(sass({sourcemap: true, sourcemapPath: 'sass/scss'}))
+    .pipe(sass({ style: 'expanded', 'sourcemap=none': true }))
     .on('error', function (err) { console.log(err.message); })
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('css'))
     .pipe(notify({ message: 'Styles built for dev environment.' }));
 });

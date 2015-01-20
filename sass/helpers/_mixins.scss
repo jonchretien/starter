@@ -57,75 +57,13 @@
 }
 
 
-// CSS3 PROPERTIES
-// --------------------------------------------------
-
-// Transitions
-@mixin transition($value) {
-  -webkit-transition: $value;
-     -moz-transition: $value;
-      -ms-transition: $value;
-       -o-transition: $value;
-          transition: $value;
-}
-
-@mixin transition-delay($transition-delay) {
-  -webkit-transition-delay: $transition-delay;
-     -moz-transition-delay: $transition-delay;
-       -o-transition-delay: $transition-delay;
-          transition-delay: $transition-delay;
-}
-
-// Background sizing
-@mixin background-size($size) {
-  -webkit-background-size: $size;
-     -moz-background-size: $size;
-       -o-background-size: $size;
-          background-size: $size;
-}
-
-// Transforms
-@mixin transform($value) {
-  -webkit-transform: translateZ($value);
-     -moz-transform: translateZ($value);
-      -ms-transform: translateZ($value);
-       -o-transform: translateZ($value);
-          transform: translateZ($value);
-}
-
-// Box sizing
-@mixin box-sizing($boxmodel) {
-  -webkit-box-sizing: $boxmodel;
-     -moz-box-sizing: $boxmodel;
-          box-sizing: $boxmodel;
-}
-
-// Box shadows
-@mixin box-shadow($value) {
-  -webkit-box-shadow: $value;
-     -moz-box-shadow: $value;
-          box-shadow: $value;
-}
-
-// User selection
-$prefixes: ("-moz-", "");
-@mixin selection($color, $background) {
-  @each $prefix in $prefixes {
-    ::#{$prefix}selection {
-      background: $background;
-      color: $color;
-      text-shadow: none;
-    }
-  }
-}
-
-
 // Borders
 // -------------------------
 
 %bordered {
   border-top: 1px solid $border-color;
 }
+
 
 // Font Face
 // -------------------------
